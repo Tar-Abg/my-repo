@@ -33,9 +33,9 @@ function checkUrl(){
   let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
 //   window.location = window.location.host
-//   if(path != undefined){
-//       window.location.host = window.location.hostname
-//   }
+  if(path != ""){
+      alert(";")
+  }
 console.log(path);
 }
 function geturlPath(url){
@@ -145,7 +145,7 @@ function nextpage(page) {
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
     getURL(cpage);
-    console.log(cpage)
+    // console.log(cpage)
     checkUrl();
 }
 
