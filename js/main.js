@@ -108,6 +108,9 @@ function fetchData(current, next, pre) {
 }
 
 function changePage(current, nextpage, prepage) {
+    prepage = current - 1;
+    nextpage = current + 1;
+
 
     var pagin = document.getElementById('pagin');
 
