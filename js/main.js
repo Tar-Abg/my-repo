@@ -35,11 +35,8 @@ function checkUrl(){
   let url = window.location.href;
   let pageNumber = getPage(url);
   if(pageNumber != window.location.href){
-    //   document.getElementById('got_page').value = page;
-    //   gotoPage();
     if(pageNumber != '' && parseInt(pageNumber)>=1){
         var new_page = Number(pageNumber);
-        console.log(new_page+"new page");
         globPage = new_page;
         var npage = Number(pageNumber) + 1;
         var cpage = Number(pageNumber);
@@ -49,18 +46,13 @@ function checkUrl(){
     }
     getURL('index.html?page='+pageNumber);
   }
-
-console.log(pageNumber);
 }
-
 
 function getPage(url){
     let index = url.indexOf('=');
-    let page = url.slice(index+1)
+    let page = url.slice(index+1);
     return page;
 }
-
-
 
 function popover(name) {
     var imgshow = '<img src="img/' + name + '" alt="" class="img-auto">';
@@ -84,14 +76,11 @@ function fetchData(current, next, pre) {
     fetch('https://api.jsonbin.io/b/5ddd31eb264e8f39a7bc697c',
         {
             "headers": {"content-type": "application/json"},
-            
         }
     ).then(function(resp) {
         return resp.json();
 
     }).then(function(data) {
-        console.log(data.length)
-
         let i;
         let output;
 
@@ -112,18 +101,12 @@ function fetchData(current, next, pre) {
 }
 
 function changePage(current, nextpage, prepage) {
-    console.log(globPage + "global page");
     current = globPage;
     prepage = parseInt(current) - 1;
     nextpage = parseInt(current) + 1;
-    console.log(current + "old")
-
-
     var pagin = document.getElementById('pagin');
-
     let newpage;
     if (prepage <= 0) {
-        console.log(current + "new")
         newpage =
             '<li class=" disabled">' +
             '<a class="page-link" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
@@ -150,7 +133,6 @@ function changePage(current, nextpage, prepage) {
 }
 
 function prev(page) {
-    // console.log(page);
     var prpage = Number(page) - 1;
     var ncpage = Number(page);
     var nxtp = Number(page) + 1;
@@ -161,14 +143,12 @@ function prev(page) {
 }
 
 function nextpage(page) {
-    // console.log(page);
     var npage = Number(page) + 1;
     var cpage = Number(page);
     var prep = Number(page) - 1;
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
     getURL('index.html?page='+cpage);
-    // console.log(cpage)
     checkUrl();
 }
 
@@ -193,5 +173,4 @@ function getURL(currentpage) {
     history.pushState({}, null,  currentpage);
 
 }
-// getURL('index.html?page=1');
 checkUrl();
