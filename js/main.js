@@ -27,8 +27,12 @@ async function fetchLocal(url) {
       xhr.open('GET', url)
       xhr.send(null)
     })
-  }
+  };
   
+function checkUrl(){
+  console.log(window.location.pathname);
+}
+checkUrl()
 
 function popover(name) {
     var imgshow = '<img src="img/' + name + '" alt="" class="img-auto">';
