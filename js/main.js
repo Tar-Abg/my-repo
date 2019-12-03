@@ -34,10 +34,10 @@ function checkUrl(){
   let path = geturlPath(url);
   console.log(typeof path)
 //   window.location = window.location.host
-  if(path != ""){
-      console.log("not empty");
-      window.location.replace(window.location.hash);
-  }
+//   if(path != ""){
+//       console.log("not empty");
+//       window.location.replace(window.location.hash);
+//   }
 console.log(path);
 }
 function geturlPath(url){
