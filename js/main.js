@@ -171,5 +171,5 @@ function getURL(currentpage) {
     history.pushState({}, null,  currentpage);
 
 }
-// getURL(curpage);
+getURL('index.html?page=1');
 checkUrl();
