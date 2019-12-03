@@ -145,6 +145,7 @@ function nextpage(page) {
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
     getURL(cpage);
+    console.log(cpage)
     checkUrl();
 }
 
