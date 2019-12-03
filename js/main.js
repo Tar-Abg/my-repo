@@ -14,10 +14,7 @@
 // $.getJSON('/data.json', function(data) {
 //     console.log(data)
 // });
-function getURL() {
-    alert("The URL of this page is: " + window.location.href);
-}
-getURL()
+    
 async function fetchLocal(url) {
     return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest
@@ -120,15 +117,17 @@ function prev(page) {
     var nxtp = Number(page) + 1;
     changePage(ncpage, nxtp, prpage);
     fetchData(ncpage, nxtp, prpage);
+    getURL(ncpage);
 }
 
 function nextpage(page) {
-    console.log(page);
+    // console.log(page);
     var npage = Number(page) + 1;
     var cpage = Number(page);
     var prep = Number(page) - 1;
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
+    getURL(cpage);
 }
 
 
@@ -142,5 +141,13 @@ function gotoPage() {
         changePage(new_page, npage, prep);
         fetchData(page, npage, prep);
     }
+    // getURL();
 
 }
+function getURL(currentpage) {
+    var url= window.location.href;
+    var fullUrl = window.location = url + '/'+ currentpage;
+    
+    console.log(fullUrl)
+}
+getURL(curpage);
