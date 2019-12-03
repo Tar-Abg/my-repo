@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nature World</title>
+    <style>
+        #got_page {
+            height: 75% !important;
+            width: 30px !important;
+            margin-top: 11px;
+            margin-left: 7px;
+            border-radius: 7px;
+            text-align: center;
+        }
+        .page-item :hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        
+        .page-item {
+            background-color: #4CAF50 !important;
+            color: white !important;
+            border-radius: 5px !important;
+        }
+
+        .page-link{
+            position: relative;
+            display: block;
+            padding: .5rem .75rem;
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            width: 45px!important;
+            height: 45px!important;
+            line-height: 37px;
+            border-radius: 50%;
+            margin-left: 0;
+            top: 7px;
+            font-size: 17px;
+            text-align: center;
+            font-weight: 600;
+            display: flex;
+        }
+        #currentpage{
+            background: #b0daca;
+            margin-right: 10px;
+            margin-left: 10px;
+            border: 1px solid;
+            padding-left: 17px!important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="nav navbar-nav navbar-light text-center pt-0"><br>
+        <div class="d-flex justify-content-center pt-0">
+            <div class="row"> 
+                <div class="col-xs-12 col-sm-12 col-lg-2">
+                    <a href="/"><img src="logo.png" alt="logo" id="logo"> </a>
+                </div>   
+                <div class="col-xs-12 col-sm-12 col-lg-4 ">
+                    <h1>uckovell.store</h1>
+                    <h4  class="header_txt">Uckovell = Luck + Love</h4>
+                </div>   
+                <div class="col-xs-9 col-sm-8 col-lg-6 mx-auto">
+                    <p class="paragrap_text">Life is not perfect, but you will meet your luck and love in the end. This store sells beauty and happiness. You are expected to feel better here.</p><br>
+                </div>   
+            </div>     
+        </div>
+    </header>
+    <div id="display-img">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal-head">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid mb-3">
+        <div class="gallery" id="gallery">
+
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="paginations">
+            <nav aria-label="Page navigation example text-dark">
+                <ul class="pagination justify-content-center" id="pagin">
+
+                    <li class="disabled">
+                    <a class="page-link" tabindex="">&laquo;</a></li>
+                    <li class="page-link" id="currentpage">1</li>
+                    <li><a class="page-link" href="#">2</a></li>
+                    <li><a class="page-link" href="#">3</a></li>
+                    <li><a class="page-link" href="#">&raquo;</a></li>
+                    <li style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:65px !important" id="got_page" value=""></li>
+                    <button class=" my-btn"  onclick="gotoPage()">Go</button>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <footer>
+        <script src="js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </footer>
+
+</body>
+
+
+</html>
