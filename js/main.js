@@ -145,10 +145,10 @@ function gotoPage() {
 
 }
 function getURL(currentpage) {
-    var url= window.location.href;
-    history.pushState({}, null, url + currentpage)
+    var url= window.location.hostname;
+    var a = history.pushState({}, null, url + currentpage)
     // var fullUrl = window.location = url + currentpage;
     
-    console.log(fullUrl)
+    console.log(a)
 }
 getURL(curpage);
