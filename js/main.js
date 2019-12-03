@@ -37,6 +37,7 @@ function checkUrl(){
     //   gotoPage();
     if(pageNumber != '' && parseInt(pageNumber)>=1){
         var new_page = Number(pageNumber);
+        console.log(new_page+"new page")
         var npage = Number(pageNumber) + 1;
         var cpage = Number(pageNumber);
         var prep = Number(pageNumber) - 1;
