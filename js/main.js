@@ -33,8 +33,10 @@ function checkUrl(){
   let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
 //   window.location = window.location.host
-//   if
-console.log(path)
+  if(path != undefined){
+      window.location.href = window.location.host
+  }
+console.log(path);
 }
 function geturlPath(url){
     let index = url.lastIndexOf('/');
