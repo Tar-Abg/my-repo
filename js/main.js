@@ -156,7 +156,9 @@ function gotoPage() {
         changePage(new_page, npage, prep);
         fetchData(page, npage, prep);
     }
-    // getURL();
+    getURL(page);
+    checkUrl();
+    
 
 }
 function getURL(currentpage) {
