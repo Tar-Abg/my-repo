@@ -31,13 +31,22 @@ async function fetchLocal(url) {
   
 function checkUrl(){
   let url = window.location.href;
-  let page = getPage(url);
-  if(page != window.location.href){
-      document.getElementById('got_page').value = page;
-      gotoPage();
+  let pageNumber = getPage(url);
+  if(pageNumber != window.location.href){
+    //   document.getElementById('got_page').value = page;
+    //   gotoPage();
+    if(pageNumber != '' && parseInt(pageNumber)>=1){
+        var new_page = Number(pageNumber);
+        var npage = Number(pageNumber) + 1;
+        var cpage = Number(pageNumber);
+        var prep = Number(pageNumber) - 1;
+        changePage(new_page, npage, prep);
+        fetchData(pageNumber, npage, prep);
+    }
+    getURL('index.html?page='+pageNumber);
   }
 
-console.log(page);
+console.log(pageNumber);
 }
 
 function getPage(url){
