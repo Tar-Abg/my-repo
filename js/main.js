@@ -32,6 +32,7 @@ async function fetchLocal(url) {
 function checkUrl(){
   let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
+  window.location.href = window.location.host
 //   if
 console.log(path)
 }
