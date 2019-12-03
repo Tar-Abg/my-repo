@@ -34,13 +34,15 @@ function checkUrl(){
   let path = geturlPath(url);
 //   if
 console.log(path)
+console.log(history.replaceState(null, null, ' '))
 }
 function geturlPath(url){
     let index = url.lastIndexOf('/');
     let path = url.slice(index+1)
     return path;
 }
-checkUrl()
+
+
 
 function popover(name) {
     var imgshow = '<img src="img/' + name + '" alt="" class="img-auto">';
@@ -164,3 +166,4 @@ function getURL(currentpage) {
     console.log(a)
 }
 getURL(curpage);
+checkUrl();
