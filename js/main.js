@@ -34,7 +34,7 @@ function checkUrl(){
   let path = geturlPath(url);
 //   window.location = window.location.host
   if(path != undefined){
-      window.location.href = window.location.host
+      window.location.host = window.location.hostname
   }
 console.log(path);
 }
