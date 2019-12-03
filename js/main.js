@@ -146,7 +146,7 @@ function gotoPage() {
 }
 function getURL(currentpage) {
     var url= window.location.href;
-    var fullUrl = window.location = url + '/'+ currentpage;
+    var fullUrl = window.location = url + currentpage;
     
     console.log(fullUrl)
 }
