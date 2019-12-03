@@ -32,6 +32,7 @@ async function fetchLocal(url) {
 function checkUrl(){
   let url = window.location.href;
   let page = getPage(url);
+  
 console.log(page);
 }
 
@@ -162,9 +163,10 @@ function gotoPage() {
     
 
 }
+
 function getURL(currentpage) {
     history.pushState({}, null,  currentpage);
 
 }
-getURL('index.html?page=1');
+// getURL('index.html?page=1');
 checkUrl();
