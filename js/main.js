@@ -30,20 +30,15 @@ async function fetchLocal(url) {
   };
   
 function checkUrl(){
-  let url = window.location.href.split('#')[0];
-  let path = geturlPath(url);
-  console.log(typeof path)
-//   window.location = window.location.host
-//   if(path != ""){
-//       console.log("not empty");
-//       window.location.replace(window.location.hash);
-//   }
-console.log(path);
+  let url = window.location.href;
+  let page = getPage(url);
+console.log(page);
 }
-function geturlPath(url){
-    let index = url.lastIndexOf('/');
-    let path = url.slice(index+1)
-    return path;
+
+function getPage(url){
+    let index = url.indexOf('=');
+    let page = url.slice(index+1)
+    return page;
 }
 
 
@@ -129,13 +124,13 @@ function changePage(current, nextpage, prepage) {
 }
 
 function prev(page) {
-    console.log(page);
+    // console.log(page);
     var prpage = Number(page) - 1;
     var ncpage = Number(page);
     var nxtp = Number(page) + 1;
     changePage(ncpage, nxtp, prpage);
     fetchData(ncpage, nxtp, prpage);
-    getURL(ncpage);
+    getURL('index.html?page='+ncpage);
     checkUrl();
 }
 
@@ -146,7 +141,7 @@ function nextpage(page) {
     var prep = Number(page) - 1;
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
-    getURL(cpage);
+    getURL('index.html?page='+cpage);
     // console.log(cpage)
     checkUrl();
 }
@@ -162,7 +157,7 @@ function gotoPage() {
         changePage(new_page, npage, prep);
         fetchData(page, npage, prep);
     }
-    getURL(page);
+    getURL('index.html?page='+page);
     checkUrl();
     
 
