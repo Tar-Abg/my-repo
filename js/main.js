@@ -30,11 +30,10 @@ async function fetchLocal(url) {
   };
   
 function checkUrl(){
-  let url = window.location.href;
+  let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
 //   if
 console.log(path)
-console.log(history.replaceState(null, null, ' '))
 }
 function geturlPath(url){
     let index = url.lastIndexOf('/');
