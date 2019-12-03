@@ -32,7 +32,11 @@ async function fetchLocal(url) {
 function checkUrl(){
   let url = window.location.href;
   let page = getPage(url);
-  
+  if(page != window.location.href){
+      document.getElementById('got_page').value = page;
+      gotoPage();
+  }
+
 console.log(page);
 }
 
