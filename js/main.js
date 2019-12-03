@@ -32,9 +32,10 @@ async function fetchLocal(url) {
 function checkUrl(){
   let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
+  console.log(typeof path)
 //   window.location = window.location.host
-  if(path != ""){
-      alert(";")
+  if(path == ""){
+      console.log("empty")
   }
 console.log(path);
 }
