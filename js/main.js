@@ -131,6 +131,7 @@ function prev(page) {
     changePage(ncpage, nxtp, prpage);
     fetchData(ncpage, nxtp, prpage);
     getURL(ncpage);
+    checkUrl();
 }
 
 function nextpage(page) {
@@ -141,6 +142,7 @@ function nextpage(page) {
     changePage(page, npage, prep);
     fetchData(page, npage, prep);
     getURL(cpage);
+    checkUrl();
 }
 
 
