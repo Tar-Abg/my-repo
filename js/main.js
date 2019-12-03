@@ -32,7 +32,7 @@ async function fetchLocal(url) {
 function checkUrl(){
   let url = window.location.href.split('#')[0];
   let path = geturlPath(url);
-  window.location = window.location.host
+//   window.location = window.location.host
 //   if
 console.log(path)
 }
@@ -163,6 +163,7 @@ function gotoPage() {
 
 }
 function getURL(currentpage) {
+    // if(window.location.hostname)
     var url= window.location.hostname;
     var a = history.pushState({}, null,  currentpage)
     // var fullUrl = window.location = url + currentpage;
