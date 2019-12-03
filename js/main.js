@@ -36,7 +36,7 @@ function checkUrl(){
 console.log(path)
 }
 function geturlPath(url){
-    let index = url.indexOf('/');
+    let index = url.lastIndexOf('/');
     let path = url.slice(index+1)
     return path;
 }
