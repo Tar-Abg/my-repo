@@ -184,7 +184,7 @@ function gotoPage() {
         fetchData(page, npage, prep);
     }
     getURL('index.html?page='+page);
-    // checkUrl();
+    checkUrl();
     
 
 }
