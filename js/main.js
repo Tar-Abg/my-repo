@@ -146,7 +146,7 @@ function gotoPage() {
 }
 function getURL(currentpage) {
     var url= window.location.hostname;
-    var a = history.pushState({}, null, url + currentpage)
+    var a = history.pushState({}, null,  currentpage)
     // var fullUrl = window.location = url + currentpage;
     
     console.log(a)
