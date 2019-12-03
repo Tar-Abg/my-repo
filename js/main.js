@@ -30,7 +30,15 @@ async function fetchLocal(url) {
   };
   
 function checkUrl(){
-  console.log(window.location.pathname);
+  let url = window.location.href;
+  let path = geturlPath(url);
+//   if
+console.log(path)
+}
+function geturlPath(url){
+    let index = url.indexOf('/');
+    let path = url.slice(index+1)
+    return path;
 }
 checkUrl()
 
