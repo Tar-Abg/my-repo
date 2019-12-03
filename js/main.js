@@ -29,6 +29,8 @@ async function fetchLocal(url) {
     })
   };
   
+var globPage =1;
+
 function checkUrl(){
   let url = window.location.href;
   let pageNumber = getPage(url);
@@ -37,7 +39,8 @@ function checkUrl(){
     //   gotoPage();
     if(pageNumber != '' && parseInt(pageNumber)>=1){
         var new_page = Number(pageNumber);
-        console.log(new_page+"new page")
+        console.log(new_page+"new page");
+        globPage = new_page;
         var npage = Number(pageNumber) + 1;
         var cpage = Number(pageNumber);
         var prep = Number(pageNumber) - 1;
@@ -49,6 +52,7 @@ function checkUrl(){
 
 console.log(pageNumber);
 }
+
 
 function getPage(url){
     let index = url.indexOf('=');
@@ -108,9 +112,12 @@ function fetchData(current, next, pre) {
 }
 
 function changePage(current, nextpage, prepage) {
+    console.log(globPage + "global page");
+    current = globPage;
     prepage = parseInt(current) - 1;
     nextpage = parseInt(current) + 1;
     console.log(current + "old")
+
 
     var pagin = document.getElementById('pagin');
 
