@@ -117,9 +117,9 @@ function changePage(current, nextpage, prepage) {
             '<li class=" disabled">' +
             '<a class="page-link" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
             '<li class=" page-link" id="currentpage">' + current + '</li>' +
-            '<li class=""><a class="page-link" onclick="nextpage(' + nextpage + ')">2</a></li>' +
-            '<li class=""><a class="page-link" onclick="nextpage(' + parseInt(3) + ')">3</a></li>' +
-            '<li class=""><a class="page-link" onclick="nextpage(' + 559 + ')">&raquo;</a></li>' +
+            '<li class=""><a class="page-link" href="" onclick="nextpage(' + nextpage + ')">2</a></li>' +
+            '<li class=""><a class="page-link" href="" onclick="nextpage(' + parseInt(3) + ')">3</a></li>' +
+            '<li class=""><a class="page-link" href="" onclick="nextpage(' + 559 + ')">&raquo;</a></li>' +
             '<li class="" style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:50px !important" id="got_page" value=""></li>'+
             '<button class=" my-btn"  onclick="gotoPage()">Go</button>';
             
@@ -129,8 +129,8 @@ function changePage(current, nextpage, prepage) {
             '<li class="">' +
             '<a class="page-link" onclick="prev(' + prepage + ');" tabindex="">'+ prepage +'</a></li>' +
             '<li class="page-link" id="currentpage">' + current + '</li>' +
-            '<li class=""><a class="page-link" onclick="nextpage(' + nextpage + ')">' + nextpage + '</a></li>' +
-            '<li class=""><a class="page-link" onclick="nextpage(' + 559 + ')">&raquo;</a></li>'+
+            '<li class=""><a class="page-link" href="" onclick="nextpage(' + nextpage + ')">' + nextpage + '</a></li>' +
+            '<li class=""><a class="page-link" href="" onclick="nextpage(' + 559 + ')">&raquo;</a></li>'+
             '<li class="" style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:50px !important" id="got_page" value=""></li>'+
             '<button class="my-btn" onclick="gotoPage()">Go</button>';
     }
