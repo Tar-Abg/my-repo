@@ -110,7 +110,7 @@ body {
 }
 
 a:not([href]):not([tabindex]) {
-    color: #007bff;
+color: #007bff !important;
     text-decoration: none;
 }
 
