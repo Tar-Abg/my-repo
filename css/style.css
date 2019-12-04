@@ -109,6 +109,11 @@ body {
     color: #007bff !important;
 }
 
+a:not([href]):not([tabindex]) {
+    color: #007bff;
+    text-decoration: none;
+}
+
 .page-item input:hover{
     border-radius: 20px;
 }
