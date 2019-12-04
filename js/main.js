@@ -129,7 +129,7 @@ function changePage(current, nextpage, prepage) {
             '<li class="">' +
             '<a class="page-link" onclick="prev(' + prepage + ');" tabindex="">'+ prepage +'</a></li>' +
             '<li class="page-link" id="currentpage">' + current + '</li>' +
-            '<li class=""><a class="page-link" href="" onclick="nextpage(' + nextpage + ')">' + nextpage + '</a></li>' +
+            '<li class=""><a class="page-link" style="color:red" href="" onclick="nextpage(' + nextpage + ')">' + nextpage + '</a></li>' +
             '<li class=""><a class="page-link" href="" onclick="nextpage(' + 559 + ')">&raquo;</a></li>'+
             '<li class="" style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:50px !important" id="got_page" value=""></li>'+
             '<button class="my-btn" onclick="gotoPage()">Go</button>';
