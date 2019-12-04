@@ -106,6 +106,7 @@ body {
     padding: 3px 22px !important;
     display: flex;
     justify-content: center;
+    color: #007bff !important;
 }
 
 .page-item input:hover{

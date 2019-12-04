@@ -54,6 +54,7 @@ function getPage(url){
     return page;
 }
 
+
 function popover(name) {
     var imgshow = '<img src="img/' + name + '" alt="" class="img-auto">';
 
@@ -76,11 +77,14 @@ function fetchData(current, next, pre) {
     fetch('https://api.jsonbin.io/b/5ddd31eb264e8f39a7bc697c',
         {
             "headers": {"content-type": "application/json"},
+            
         }
     ).then(function(resp) {
         return resp.json();
 
     }).then(function(data) {
+        console.log(data.length)
+
         let i;
         let output;
 
@@ -104,7 +108,9 @@ function changePage(current, nextpage, prepage) {
     current = globPage;
     prepage = parseInt(current) - 1;
     nextpage = parseInt(current) + 1;
+
     var pagin = document.getElementById('pagin');
+
     let newpage;
     if (prepage <= 0) {
         newpage =
@@ -162,8 +168,9 @@ function gotoPage() {
         var prep = Number(page) - 1;
         changePage(new_page, npage, prep);
         fetchData(page, npage, prep);
+        getURL('index.html?page='+page);
     }
-    getURL('index.html?page='+page);
+    
     checkUrl();
     
 
