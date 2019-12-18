@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nature World</title>
+    <script data-ad-client="ca-pub-2161716975506934" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <style>
         #got_page {
             height: 75% !important;
@@ -102,11 +103,11 @@
             <nav aria-label="Page navigation example text-dark">
                 <ul class="pagination justify-content-center" id="pagin">
                     <li class="disabled">
-                    <a class="page-link" tabindex="">&laquo;</a></li>
-                    <li class="page-link" id="currentpage">1</li>
-                    <li><a class="page-link">2</a></li>
-                    <li><a class="page-link">3</a></li>
-                    <li><a class="page-link">&raquo;</a></li>
+                    <a class="page-link startEnd" tabindex="">&laquo;</a></li>
+                    <li class="page-link nextPrev">&lt;</li>
+                    <li><a class="page-link" id="currentpage">1</a></li>
+                    <li><a class="page-link nextPrev" onclick="nextpage(2)">&gt;</a></li>
+                    <li><a class="page-link startEnd">&raquo;</a></li>
                     <li style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:65px !important" id="got_page" value=""></li>
                     <button class=" my-btn"  onclick="gotoPage()">Go</button>
                 </ul>

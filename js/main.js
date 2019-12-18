@@ -56,6 +56,7 @@ function getPage(url){
 
 
 function popover(name) {
+    console.log(name + 'img name')
     var imgshow = '<img src="img/' + name + '" alt="" class="img-auto">';
 
     var modal_gellary = document.getElementById('modal-head');
@@ -70,9 +71,10 @@ let prepage = curpage - 1;
 fetchData(curpage, npage, prepage);
 
 
-
+var images 
 function fetchData(current, next, pre) {
 
+    console.log(current + "page")
 
     fetch('https://api.jsonbin.io/b/5ddd31eb264e8f39a7bc697c',
         {
@@ -83,15 +85,28 @@ function fetchData(current, next, pre) {
         return resp.json();
 
     }).then(function(data) {
-        console.log(data.length)
+        images = data
+        console.log(images.length)
 
         let i;
         let output;
+        
 
-        let n = Number(current) * 10;
-        let start = Number(current - 1) * 10;
-        for (i = start; i <= n; i++) {
-            output += '<div class="mb-3 pics animation all 2"><img class="img-fluid" onclick="popover(&#39;' + data[i].name + '&#39;);" data-toggle="modal" data-target="#myModal" src="img/' + data[i].name + '"></div>';
+        let n = Number(current) * 12;
+        let start = (Number(current) * 12)-11;
+        let max = start + 12;
+        console.log(start + 'star')
+        console.log(max + 'max')
+        console.log(data[5].name);
+        // console.log(data.find(name = "img1.jpg"))
+        
+        let curentImg
+        for (i = start; i < max; i++) {
+            curentImg = data.filter(obj => {
+                return obj.name == 'img'+i + '.jpg'
+              })
+              console.log(curentImg)
+            output += '<div class="mb-3 pics animation all 2"><img class="img-fluid" onclick="popover(&#39;' + curentImg[0].name + '&#39;);" data-toggle="modal" data-target="#myModal" src="img/' + curentImg[0].name + '"></div>';
         }
 
         var gallery = document.getElementById('gallery');
@@ -104,6 +119,10 @@ function fetchData(current, next, pre) {
 
 }
 
+// function checkImg(name, data){
+//     return name == data[]
+// }
+
 function changePage(current, nextpage, prepage) {
     current = globPage;
     prepage = parseInt(current) - 1;
@@ -115,22 +134,22 @@ function changePage(current, nextpage, prepage) {
     if (prepage <= 0) {
         newpage =
             '<li class=" disabled">' +
-            '<a class="page-link" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
+            '<a class="page-link nextAndPrev" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
             '<li class=" page-link" id="currentpage">' + current + '</li>' +
             '<li class=""><a class="page-link" href="" onclick="nextpage(' + nextpage + ')">2</a></li>' +
             '<li class=""><a class="page-link" href="" onclick="nextpage(' + parseInt(3) + ')">3</a></li>' +
-            '<li class=""><a class="page-link" href="" onclick="nextpage(' + 559 + ')">&raquo;</a></li>' +
+            '<li class=""><a class="page-link nextAndPrev" href="" onclick="nextpage(' + images.length/12  + ')">&raquo;</a></li>' +
             '<li class="" style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:50px !important" id="got_page" value=""></li>'+
             '<button class=" my-btn"  onclick="gotoPage()">Go</button>';
             
     } else {
         newpage = '<li class=" ">' +
-            '<a class="page-link" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
+            '<a class="page-link nextAndPrev" onclick="prev(' + 1 + ');" tabindex="">&laquo;</a></li>' +
             '<li class="">' +
             '<a class="page-link" onclick="prev(' + prepage + ');" tabindex="">'+ prepage +'</a></li>' +
             '<li class="page-link" id="currentpage">' + current + '</li>' +
             '<li class=""><a class="page-link" style="color:red" href="" onclick="nextpage(' + nextpage + ')">' + nextpage + '</a></li>' +
-            '<li class=""><a class="page-link" href="" onclick="nextpage(' + 559 + ')">&raquo;</a></li>'+
+            '<li class=""><a class="page-link nextAndPrev" href="" onclick="nextpage(' + images.length/12 + ')">&raquo;</a></li>'+
             '<li class="" style="background-color:transparent !important;border-radius: 20px !important;"><input type="tel" style="width:50px !important" id="got_page" value=""></li>'+
             '<button class="my-btn" onclick="gotoPage()">Go</button>';
     }

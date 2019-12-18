@@ -2,6 +2,8 @@
     font-size: 40px;
     margin-bottom: 50px;
 }
+
+
  
 .header_txt{
     font-family:Georgia,serif;
@@ -133,7 +135,12 @@ body {
     background-color: transparent;
     color: #000;
 }
-
+li .startEnd{
+    font-size: 45px;
+}
+.pagination .nextPrev{
+    font-size: 38px;
+}
 @media (max-width: 400px) {
     .btn.filter {
         padding-left: 1.1rem;
